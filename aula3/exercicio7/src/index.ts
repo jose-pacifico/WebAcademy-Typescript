@@ -1,5 +1,7 @@
 import { Turma } from "./turma";
 import { Curso } from "./curso";
+import { Area } from "./area";
+import { Turno } from "./turno";
 
 class GerenciadorTurmas {
   turmas: Turma[];
@@ -31,11 +33,11 @@ class GerenciadorTurmas {
 export default GerenciadorTurmas;
 
 const gerenciador = new GerenciadorTurmas();
-const curso1 = new Curso();
-const turma1 = new Turma(1, "Turma A", Turno.Manhã, curso1);
+const curso1 = new Curso("Curso A", Area.humanas);
+const turma1 = new Turma(1, "Turma A", Turno.manha, curso1);
 
-const curso2 = new Curso("Curso de História", Area.Humanas);
-const turma2 = new Turma(2, "Turma B", Turno.Tarde, curso2);
+const curso2 = new Curso("Curso de História", Area.exatas);
+const turma2 = new Turma(2, "Turma B", Turno.tarde, curso2);
 
 gerenciador.adicionarTurma(turma1);
 gerenciador.adicionarTurma(turma2);
